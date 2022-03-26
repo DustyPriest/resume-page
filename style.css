@@ -1,0 +1,221 @@
+/* ------  Adapted Meyerweb CSS Reset  ------ */
+
+/* prettier-ignore */
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p,
+a, em, img, strong, ol, ul, li,
+form, label, footer, header, nav {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* prettier-ignore */
+footer, header, nav, section {
+	display: block;
+}
+
+body {
+  line-height: 1;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+/* ------ Custom Properties ------ */
+
+/* Color Theme Swatches in HSLA */
+/* .Travel-1-hsla { color: hsla(185, 96, 17, 1); }
+.Travel-2-hsla { color: hsla(22, 96, 48, 1); }
+.Travel-3-hsla { color: hsla(22, 75, 79, 1); }
+.Travel-4-hsla { color: hsla(0, 96, 48, 1); }
+.Travel-5-hsla { color: hsla(0, 85, 35, 1); } */
+
+/* Background #FFFBF7 */
+/* Light Section #FFECDE */
+/* Header, Footer & Welcome: #78ADB3 */
+/* Light blue section #DEFCFF */
+/* Brown #B39889 */
+/* Orange accent: #F07F30 */
+
+:root {
+  --clr-primary-900: #78adb3;
+  --clr-primary-600: #defcff;
+  /* --clr-primary-300: */
+
+  --clr-secondary-900: #ffecde;
+  /* --clr-secondary-600: */
+  --clr-secondary-300: #fffbf7;
+
+  --clr-accent: hsl(24, 100%, 40%);
+  /* TODO: Decide on dark accent */
+  --clr-accent-dark1: hsl(25, 86%, 20%);
+  --clr-accent-dark2: hsl(21, 42%, 22%);
+
+  --clr-text-primary: hsl(0, 0%, 12%);
+  --clr-text-secondary: hsl(0, 0%, 20%);
+  --clr-text-light: hsl(0 0 30);
+
+  --ftw-900: 900;
+  --ftw-600: 600;
+  --ftw-400: 400;
+  --ftw-200: 200;
+
+  --gap-sml: 1rem;
+  --gap-med: 2rem;
+  --gap-lge: 4rem;
+
+  --txtbox-width: clamp(500px, 50vw, 750px);
+
+  --txt-underline: 0.2em solid;
+
+  /* --boxshadow-low:
+  --boxshadow-mid:
+  --boxshadow-high: */
+}
+
+/* ------ Main Layout ------ */
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: var(--ftw-400);
+  color: var(--clr-text-primary);
+  background-color: var(--clr-secondary-300);
+}
+
+em {
+  font-style: italic;
+}
+
+/* TODO: Nav shadow on scroll */
+
+nav {
+  position: fixed;
+  width: 100%;
+}
+
+nav,
+#footer {
+  max-height: 5vh;
+  padding: var(--gap-sml);
+  gap: var(--gap-med);
+}
+
+nav,
+#footer,
+#welcome {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--clr-primary-900);
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-lge);
+  padding: var(--gap-lge);
+}
+
+.section.alt {
+  background-color: var(--clr-secondary-900);
+}
+
+.section-content {
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap-lge);
+  justify-content: center;
+  align-items: center;
+  width: clamp(900px, 80vw, 1500px);
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: var(--ftw-600);
+  color: var(--clr-text-secondary);
+}
+
+h1,
+.underline {
+  position: relative;
+  width: fit-content;
+}
+
+h1::before,
+.underline::before {
+  content: '';
+  position: absolute;
+  inset: -0.5em 0;
+  border-bottom: var(--txt-underline);
+  transform: scale(70%);
+  transform-origin: left;
+}
+
+/* ------ SECTION SPECIFICS ------ */
+
+/* TODO: background design for welcome section */
+#welcome {
+  height: 95vh;
+}
+
+h1 {
+  color: var(--clr-accent);
+  font-size: 4rem;
+  font-weight: var(--ftw-900);
+  margin-bottom: 1.5rem;
+}
+
+.welcome-text {
+  width: var(--txtbox-width);
+}
+
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sml);
+
+  color: var(--clr-text-secondary);
+  font-size: 1.25rem;
+
+  width: var(--txtbox-width);
+}
+
+.about-text p:first-child {
+  font-weight: var(--ftw-600);
+}
+
+/* ------ Cards ------ */
+
+.main-card {
+}
+
+/* ------ Lists ------ */
+
+.nav-list {
+  display: flex;
+  gap: var(--gap-sml);
+}
+
+/* ------ Timeline ------ */
+
+/* ------ Buttons & Icons ------ */
+
+/* ------ Images ------ */
+
+img {
+  border-radius: 100%;
+}
+
+.profile-img {
+  width: 200px;
+  height: 200px;
+}
