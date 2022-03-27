@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,900;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,400;0,600;0,900;1,200;1,400;1,600;1,900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css" />
@@ -26,21 +26,25 @@
       <!-- TODO: socials icons aligned right -->
     </nav>
     <div id="sections">
-      <div id="welcome" class="section">
+      <div id="welcome" class="section frame">
         <div class="welcome-text">
           <h1>Hi, I'm Hugo</h1>
           <h2><em>Student, problem solver, aspiring programmer</em></h2>
         </div>
         <img
-          class="profile-img"
+          class="img-round profile"
           src="./resources/profile-img.jpg"
           alt="Portrait photo of Hugo"
         />
       </div>
       <div class="section">
         <h2 class="underline">About Me</h2>
-        <div class="section-content">
-          <img class="img-card" src="https://unsplash.it/300/300" alt="" />
+        <div class="section-content frame">
+          <img
+            class="img-round about"
+            src="./resources/About-me-crop2.png"
+            alt="Photo of Hugo finishing a cake"
+          />
           <div class="about-text">
             <p>
               I have always been captivated by the process of finding the best
@@ -50,17 +54,19 @@
               I love delving into areas that I haven't been exposed to before,
               where I'm all but assured to learn something new and interesting.
               It is for this reason that I particularly enjoy exploring
-              different programming languages and design paradigms. I've created
-              this webpage as on ongoing project to showcase who I am and what I
-              love. Built entirely using vanilla JS/HTML/CSS, I plan to revise
-              parts of or the whole page as I learn more and wish to challenge
-              myself.
+              different programming languages and design paradigms.
+            </p>
+            <p>
+              I've created this webpage as an ongoing project to showcase who I
+              am and what I love. Built entirely using vanilla JS/HTML/CSS, I
+              plan to revise parts of the page as I learn more and wish to
+              further challenge myself.
             </p>
             <p>
               In my leisure time I like to try my hand at cooking fresh new
               dishes, playing around on the trumpet or keyboard, learning about
-              about skills I've never touched before, and reading speculative
-              fiction and fantasy novels.
+              skills I've never touched before, and reading speculative fiction
+              and fantasy novels.
             </p>
             <!-- <p>
               I have been described as a diligent, detail conscious problem
@@ -71,13 +77,15 @@
         </div>
       </div>
       <div class="section alt">
-        <h2 class="underline">Work</h2>
-        <div class="section-content">
+        <h2 class="underline">Work History</h2>
+        <div class="section-content work-grid frame">
           <div class="main-card">
-            <h3>Downer Group</h3>
-            <p class="date-range">Feb 2021 - Present</p>
-            <div class="sub-card">
+            <div class="title-sub-card accent-card">
+              <h3>Downer Group</h3>
               <p class="subtitle">Project Support Officer</p>
+              <p class="date-range">Feb 2021 - Present</p>
+            </div>
+            <div class="sub-card job-desc">
               <p>
                 For the past year, I have worked as a finance and human
                 resources project officer with Downer Group, working within a
@@ -87,8 +95,8 @@
             </div>
             <div class="sub-card">
               <div class="list-title">Responsibilities</div>
-              <ul>
-                <li>Project Date Management</li>
+              <ul class="work-list">
+                <li>Project data management</li>
                 <li>Payroll reporting (SAP, PayGlobal)</li>
                 <li>Review of project procedures</li>
                 <li>Data analysis</li>
@@ -97,7 +105,7 @@
             </div>
             <div class="sub-card">
               <div class="list-title">Achievements</div>
-              <ul>
+              <ul class="work-list">
                 <li>
                   Devised strategy and implemented process to action outstanding
                   remediation cases for approx. 1500 employees across multiple
@@ -115,11 +123,13 @@
             </div>
           </div>
           <div class="half-card">
-            <h3>Café & Bar Customer Service/Barista</h3>
-            <p class="date-range">2013 - Feb 2021</p>
-            <div class="sub-card">
+            <div class="title-sub-card">
+              <h3>Café & Bar Customer Service/Barista</h3>
+              <p class="date-range">2013 - Feb 2021</p>
+            </div>
+            <div class="sub-card solo-card">
               <div class="list-title">Responsibilites</div>
-              <ul>
+              <ul class="work-list">
                 <li>
                   Preparing and serving coffee, alcoholic beverages and food
                 </li>
@@ -129,19 +139,23 @@
             </div>
           </div>
           <div class="half-card">
-            <h3>Gap Year Work</h3>
-            <p class="date-range">2017</p>
-            <p>
-              Gap year experience in Scotland and Spain including yacht crew &
-              galley hand, café/bar and event wait-service, and construction and
-              farm labourer.
-            </p>
+            <div class="title-sub-card">
+              <h3>Gap Year Work</h3>
+              <p class="date-range">2017</p>
+            </div>
+            <div class="sub-card solo-card">
+              <p>
+                Gap year experience in Scotland and Spain including sailing crew
+                & galley hand, café/bar and event wait-service, and construction
+                and farm labourer.
+              </p>
+            </div>
           </div>
         </div>
       </div>
       <div class="section">
         <h2 class="underline">Education</h2>
-        <div class="timeline-main">
+        <div class="timeline-main frame">
           <div class="timeline-card">
             <div class="timeline-card-date">2016</div>
             <div class="timeline-card-title">Scotch College</div>
@@ -172,7 +186,7 @@
       </div>
       <div class="section alt">
         <h2 class="underline">Projects</h2>
-        <div class="section-content">
+        <div class="section-content frame">
           <div class="project-card">
             <img
               class="project-img"
@@ -201,7 +215,7 @@
           </div>
         </div>
       </div>
-      <div class="section">
+      <div class="section frame">
         <h2 class="underline">Contact Me</h2>
       </div>
     </div>
