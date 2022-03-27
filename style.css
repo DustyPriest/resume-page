@@ -29,6 +29,11 @@ ul {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* ------ Custom Properties ------ */
 
 /* Color Theme Swatches in HSLA */
@@ -46,7 +51,7 @@ ul {
 /* Orange accent: #F07F30 */
 
 :root {
-  --clr-primary-900: #78adb3;
+  --clr-primary-900: #00a9b3;
   --clr-primary-600: #defcff;
   /* --clr-primary-300: */
 
@@ -494,7 +499,68 @@ up, down, up */
   background-color: var(--clr-secondary-300);
 }
 
+/* ------ Project Cards ------ */
+
+.project-card {
+  /* border: 2px solid var(--clr-accent); */
+  border-radius: 0 2rem;
+  width: 400px;
+  box-shadow: var(--boxshadow-mid);
+  background-color: var(--clr-accent);
+}
+
+.project-text {
+  display: flex;
+  flex-direction: column;
+  padding: var(--gap-sml);
+  gap: var(--gap-sml);
+  color: var(--clr-secondary-300);
+  border-bottom-left-radius: inherit;
+}
+
+.project-title {
+  font-size: 2rem;
+  font-weight: var(--ftw-600);
+}
+
+.project-detail {
+  /* color: var(--clr-text-secondary); */
+  font-style: italic;
+}
+
+.project-btns {
+  padding-bottom: var(--gap-xsml);
+  display: flex;
+  justify-content: center;
+  gap: var(--gap-med);
+}
+
 /* ------ Buttons & Icons ------ */
+
+.project-btns a {
+  color: var(--clr-text-primary);
+  font-size: 1.25rem;
+  font-weight: var(--ftw-600);
+  text-align: center;
+  width: 50px;
+  padding: 0.4rem 1rem;
+  background-color: var(--clr-secondary-900);
+  border-radius: 0.5rem;
+}
+
+.project-btns a.active {
+  transition: all 0.25s ease-out;
+}
+
+.project-btns a.active:hover {
+  color: var(--clr-secondary-300);
+  background-color: var(--clr-primary-900);
+  box-shadow: var(--boxshadow-low);
+}
+
+.project-btns a.inactive {
+  opacity: 0.7;
+}
 
 /* ------ Images ------ */
 
@@ -511,4 +577,12 @@ img.profile {
 img.about {
   width: 400px;
   height: 400px;
+}
+
+.project-card img {
+  width: 400px;
+  height: 240px;
+  object-fit: cover;
+  object-position: 0% 0%;
+  border-top-right-radius: inherit;
 }
