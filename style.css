@@ -65,7 +65,7 @@ a {
   --clr-accent-dark2: hsl(21, 42%, 22%);
 
   --clr-text-primary: hsl(0, 0%, 12%);
-  --clr-text-secondary: hsl(0, 0%, 20%);
+  --clr-text-secondary: hsl(0, 0%, 25%);
   --clr-text-light: hsl(0 0 30);
 
   --ftw-900: 900;
@@ -207,7 +207,8 @@ h2 {
 }
 
 h1,
-.underline {
+.underline,
+.contact-text li {
   position: relative;
   width: fit-content;
 }
@@ -216,10 +217,35 @@ h1::before,
 .underline::before {
   content: '';
   position: absolute;
-  inset: -0.5em 0;
+  inset: -0.3em 0;
   border-bottom: var(--txt-underline);
-  transform: scale(70%);
+  transform: scaleX(70%);
   transform-origin: left;
+}
+
+.contact-text li::before,
+.about-text a::before {
+  content: none;
+  position: absolute;
+  inset: 0;
+  border-bottom: var(--txt-underline);
+  transform-origin: left;
+}
+
+.contact-text li:hover::before,
+.about-text a:hover::before {
+  animation: underslide 0.4s forwards;
+  content: '';
+  z-index: -1;
+}
+
+@keyframes underslide {
+  from {
+    transform: scaleX(0%);
+  }
+  to {
+    transform: scaleX(70%);
+  }
 }
 
 /* ------ SECTION SPECIFICS ------ */
@@ -253,6 +279,12 @@ h1 {
 }
 
 .about-text p:first-child {
+  font-weight: var(--ftw-600);
+}
+
+.about-text a {
+  position: relative;
+  font-style: italic;
   font-weight: var(--ftw-600);
 }
 
@@ -535,6 +567,27 @@ up, down, up */
   gap: var(--gap-med);
 }
 
+/* ------ Contact ------ */
+
+.contact-text {
+  margin-right: var(--gap-lge);
+}
+
+.contact-text li {
+  color: var(--clr-text-secondary);
+  font-size: 1.25rem;
+  padding: var(--gap-sml) 0;
+}
+
+.contact-text li:hover,
+.about-text a:hover {
+  color: var(--clr-text-primary);
+}
+
+.contact-text i {
+  padding: var(--gap-xsml);
+}
+
 /* ------ Buttons & Icons ------ */
 
 .project-btns a {
@@ -559,7 +612,7 @@ up, down, up */
 }
 
 .project-btns a.inactive {
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
 /* ------ Images ------ */
@@ -574,7 +627,8 @@ img.profile {
   height: 200px;
 }
 
-img.about {
+img.about,
+img.contact {
   width: 400px;
   height: 400px;
 }
