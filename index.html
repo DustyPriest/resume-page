@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- TODO: MOBILE SUPPORT -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -16,18 +17,18 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./style.css" />
+    <!-- <script src="./script.js" defer></script> -->
   </head>
   <body>
     <nav>
-      <div class="nav-name">Hugo Akindele-Obe</div>
+      <div class="nav-name"><a href="#welcome">Hugo Akindele-Obe</a></div>
       <ul class="nav-list">
-        <li>About Me</li>
-        <li>Work</li>
-        <li>Education</li>
-        <li>Projects</li>
-        <li>Contact</li>
+        <li><a href="#about-me">ABOUT ME</a></li>
+        <li><a href="#work">WORK HISTORY</a></li>
+        <li><a href="#education">EDUCATION</a></li>
+        <li><a href="#projects">PROJECTS</a></li>
+        <li><a href="#contact">CONTACT</a></li>
       </ul>
-      <!-- TODO: socials icons aligned right -->
     </nav>
     <div id="sections">
       <div id="welcome" class="section frame">
@@ -41,7 +42,7 @@
           alt="Portrait photo of Hugo"
         />
       </div>
-      <div class="section">
+      <div id="about-me" class="section">
         <h2 class="underline">About Me</h2>
         <div class="section-content frame">
           <img
@@ -81,7 +82,7 @@
           </div>
         </div>
       </div>
-      <div class="section alt">
+      <div id="work" class="section alt">
         <h2 class="underline">Work History</h2>
         <div class="section-content work-grid frame">
           <div class="main-card">
@@ -158,7 +159,7 @@
           </div>
         </div>
       </div>
-      <div class="section">
+      <div id="education" class="section">
         <h2 class="underline">Education</h2>
         <div class="timeline-grid frame">
           <div class="timeline-card">
@@ -197,7 +198,7 @@
           </div>
         </div>
       </div>
-      <div class="section alt">
+      <div id="projects" class="section alt">
         <h2 class="underline">Projects</h2>
         <div class="section-content frame">
           <div class="project-card">
@@ -242,13 +243,13 @@
           </div>
         </div>
       </div>
-      <div class="section frame">
+      <div id="contact" class="section frame">
         <h2 class="underline">Contact Me</h2>
         <div class="section-content">
           <div class="contact-text">
             <ul>
               <li>
-                <a href="hugo.a.obe@gmail.com">
+                <a href="mailto:hugo.a.obe@gmail.com">
                   <i class="fa-solid fa-at"></i>
                   <span class="contact-longtext">hugo.a.obe@gmail.com</span>
                 </a>
@@ -279,6 +280,10 @@
         </div>
       </div>
     </div>
-    <div id="footer"></div>
+    <div id="footer">
+      <div>
+        <span>&copy; 2022 Hugo Akindele-Obe</span>
+      </div>
+    </div>
   </body>
 </html>
