@@ -276,7 +276,7 @@ h1 {
 .sub-card {
   color: var(--clr-text-secondary);
   font-size: 1.25rem;
-  padding: 0 var(--gap-sml) var(--gap-med) var(--gap-sml);
+  padding: 0 var(--gap-med) var(--gap-med) var(--gap-med);
 }
 
 .sub-card.job-desc {
@@ -285,8 +285,7 @@ h1 {
 }
 
 .sub-card.solo-card {
-  padding: var(--gap-sml);
-  padding-bottom: 1.5rem;
+  padding: var(--gap-sml) var(--gap-med) var(--gap-med) var(--gap-med);
 }
 
 .sub-card .list-title {
@@ -302,7 +301,7 @@ h1 {
   flex-direction: column;
   gap: var(--gap-xsml);
   border-top-right-radius: inherit;
-  padding: var(--gap-sml);
+  padding: var(--gap-sml) var(--gap-med);
 }
 
 .title-sub-card.accent-card {
@@ -378,6 +377,122 @@ h3 {
 }
 
 /* ------ Timeline ------ */
+
+/* Grid, with before on the Grid itself for the 
+horizontal line. 3 columns, 2 rows.
+circle/dot pseudo element on each education card
+up, down, up */
+
+.timeline-grid {
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+  gap: var(--gap-lge);
+  position: relative;
+}
+
+.timeline-grid .timeline-card:nth-child(2) {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.timeline-grid .timeline-card:nth-child(2) .timeline-card-date {
+  padding-top: 0;
+  padding-bottom: var(--gap-xsml);
+}
+
+.timeline-grid .timeline-card:last-child {
+  grid-column: 3;
+}
+
+.timeline-grid::before {
+  content: '';
+  position: absolute;
+  inset: 45% 0 45% -15%;
+  height: clamp(1.5rem, 10%, 2.5rem);
+  background: var(--clr-accent);
+  /* border-top: 3px solid var(--clr-primary-900); */
+  /* border-bottom: 3px solid var(--clr-primary-900); */
+}
+
+.timeline-grid::after {
+  content: '';
+  position: absolute;
+  inset: 40% auto 40% -15%;
+  width: 10%;
+  z-index: 1;
+  /* background-color: green; */
+  background-image: linear-gradient(
+    to left,
+    hsla(30 100% 98% / 0),
+    hsla(30 100% 98% / 1) 100%
+  );
+}
+
+.timeline-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.timeline-card-date {
+  font-size: 1.75rem;
+  font-weight: var(--ftw-600);
+  padding-top: var(--gap-xsml);
+}
+
+.timeline-text {
+  color: var(--clr-text-secondary);
+}
+
+.timeline-text + .timeline-text {
+  padding-top: 0.5rem;
+}
+
+.timeline-card-title {
+  font-size: 1.5rem;
+}
+
+.timeline-card-subtitle,
+.timeline-card-detail {
+  font-size: 1.25rem;
+  font-style: italic;
+}
+
+.timeline-card::before {
+  content: '';
+  position: absolute;
+  bottom: -3.5rem;
+  height: 2rem;
+  width: 2rem;
+  background-color: var(--clr-secondary-300);
+  border: 0.5rem solid var(--clr-primary-900);
+  border-radius: 100%;
+  z-index: 5;
+}
+
+.timeline-card:nth-child(2)::before {
+  content: '';
+  position: absolute;
+  top: -3.5rem;
+  height: 2rem;
+  width: 2rem;
+  background-color: var(--clr-secondary-300);
+  border: 0.5rem solid var(--clr-primary-900);
+  border-radius: 100%;
+}
+
+.timeline-card:last-child::after {
+  content: '';
+  position: absolute;
+  bottom: -3.5rem;
+  left: 50%;
+  height: 3rem;
+  width: 50%;
+  z-index: 4;
+  background-color: var(--clr-secondary-300);
+}
 
 /* ------ Buttons & Icons ------ */
 
