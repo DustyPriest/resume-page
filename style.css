@@ -36,19 +36,8 @@ a {
 
 /* ------ Custom Properties ------ */
 
-/* Color Theme Swatches in HSLA */
-/* .Travel-1-hsla { color: hsla(185, 96, 17, 1); }
-.Travel-2-hsla { color: hsla(22, 96, 48, 1); }
-.Travel-3-hsla { color: hsla(22, 75, 79, 1); }
-.Travel-4-hsla { color: hsla(0, 96, 48, 1); }
-.Travel-5-hsla { color: hsla(0, 85, 35, 1); } */
-
-/* Background #FFFBF7 */
-/* Light Section #FFECDE */
-/* Header, Footer & Welcome: #78ADB3 */
-/* Light blue section #DEFCFF */
-/* Brown #B39889 */
-/* Orange accent: #F07F30 */
+/* TODO: Dark theme */
+/* TODO: media queries for smaller window sizes */
 
 :root {
   --clr-primary-900: #00a9b3;
@@ -101,8 +90,6 @@ body {
 em {
   font-style: italic;
 }
-
-/* TODO: Nav shadow on scroll */
 
 nav {
   position: fixed;
@@ -267,11 +254,16 @@ nav {
   height: 1.5rem;
   align-items: center;
   justify-content: space-between;
+  transition: box-shadow 0.25s ease-out;
+}
+
+nav.scroll-shadow {
   box-shadow: var(--boxshadow-high);
 }
 
 nav .nav-name {
-  font-size: 1.5rem;
+  min-width: fit-content;
+  font-size: clamp(1rem, 10vw, 1.5rem);
   font-weight: var(--ftw-600);
   margin-right: var(--gap-med);
 }
@@ -282,6 +274,7 @@ nav .nav-list {
 }
 
 nav li {
+  min-width: fit-content;
   padding-left: var(--gap-sml);
 }
 
