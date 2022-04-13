@@ -568,6 +568,10 @@ h3 {
   background-color: var(--clr-accent);
 }
 
+.project-card * {
+  border-top-right-radius: inherit;
+}
+
 .project-text {
   display: flex;
   flex-direction: column;
@@ -623,7 +627,7 @@ h3 {
   font-weight: var(--ftw-600);
   text-align: center;
   width: 50px;
-  padding: 0.4rem 1rem;
+  padding: 0.6rem 1rem;
   background-color: var(--clr-secondary-900);
   border-radius: 0.5rem;
 }
@@ -665,5 +669,67 @@ img.contact {
   height: 240px;
   object-fit: cover;
   object-position: 0% 0%;
-  border-top-right-radius: inherit;
+}
+
+.project-card > a div {
+  position: relative;
+}
+
+.project-card > a div::before {
+  content: none;
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--clr-accent);
+  border-bottom: none;
+  border-right: none;
+  border-top-right-radius: 2rem;
+}
+
+.project-card > a:hover div::before {
+  content: '';
+  animation: left-top-clip 500ms ease;
+}
+
+.project-card > a div::after {
+  content: none;
+  position: absolute;
+  inset: 0;
+  border: 2px solid var(--clr-accent);
+  border-bottom: none;
+  border-left: none;
+  border-top: none;
+  border-top-right-radius: 2rem;
+}
+
+.project-card > a:hover div::after {
+  content: '';
+  animation: right-clip 800ms ease;
+}
+
+/* Intended to both have the same duration to keep right border content hidden */
+@keyframes left-top-clip {
+  0% {
+    clip-path: inset(100% 398px 0 0);
+  }
+  40% {
+    clip-path: inset(0 398px 0 0);
+  }
+  100% {
+    clip-path: inset(0);
+  }
+}
+
+@keyframes right-clip {
+  0% {
+    clip-path: inset(0 50%);
+  }
+  62% {
+    clip-path: inset(0 50%);
+  }
+  63% {
+    clip-path: inset(0 0 238px 0);
+  }
+  100% {
+    clip-path: inset(0);
+  }
 }

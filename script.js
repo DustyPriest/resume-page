@@ -1,5 +1,4 @@
 // Scripts for resume / portfolio webpage
-// Version 1 - 27/03/2022
 // Author: DustyPriest
 
 /* ------ GLOBALS ------ */
