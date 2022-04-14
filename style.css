@@ -566,6 +566,12 @@ h3 {
   width: 400px;
   box-shadow: var(--boxshadow-mid);
   background-color: var(--clr-accent);
+  transition: all 300ms ease;
+}
+
+.project-card:hover {
+  transform: translateY(-2%);
+  box-shadow: var(--boxshadow-high);
 }
 
 .project-card * {
