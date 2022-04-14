@@ -34,10 +34,18 @@ a {
   color: inherit;
 }
 
+body.preload *,
+body.preload *::before,
+body.preload *::after {
+  animation-duration: 0s;
+}
+
 /* ------ Custom Properties ------ */
 
 /* TODO: Dark theme */
 /* TODO: media queries for smaller window sizes */
+/* TODO: accessibility features (alia etc) */
+/* TODO: focus/hover states */
 
 :root {
   --clr-primary-900: #00a9b3;
@@ -220,19 +228,20 @@ h1::before,
 .contact-text li::before,
 .about-text a::before,
 nav a::before {
-  content: none;
+  content: '';
   position: absolute;
+  z-index: -1;
   inset: 0;
   border-bottom: var(--txt-underline);
   transform-origin: left;
+  transform: scaleX(0%);
+  animation: rev-underslide 0.4s forwards;
 }
 
 .contact-text li:hover::before,
 .about-text a:hover::before,
 nav a:hover::before {
   animation: underslide 0.4s forwards;
-  content: '';
-  z-index: -1;
 }
 
 nav a::before {
@@ -240,11 +249,20 @@ nav a::before {
 }
 
 @keyframes underslide {
-  from {
+  0% {
     transform: scaleX(0%);
   }
-  to {
+  100% {
     transform: scaleX(70%);
+  }
+}
+
+@keyframes rev-underslide {
+  0% {
+    transform: scaleX(70%);
+  }
+  100% {
+    transform: scaleX(0%);
   }
 }
 

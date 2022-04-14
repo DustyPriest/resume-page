@@ -1,6 +1,12 @@
 // Scripts for resume / portfolio webpage
 // Author: DustyPriest
 
+/* ------ LOAD FUNCTIONS ------ */
+
+setTimeout(() => {
+  document.body.classList.remove('preload');
+}, 500);
+
 /* ------ GLOBALS ------ */
 
 let scrolling = false;
