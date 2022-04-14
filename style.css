@@ -685,9 +685,27 @@ img.contact {
   border-top-right-radius: 2rem;
 }
 
-.project-card > a:hover div::before {
+.project-card > a div.add-pseudo::before,
+.project-card > a div.add-pseudo::after,
+.project-card > a div.remove-pseudo::before,
+.project-card > a div.remove-pseudo::after {
   content: '';
-  animation: left-top-clip 500ms ease;
+}
+
+.project-card > a div.remove-pseudo::before {
+  animation: rev-left-top-clip 500ms normal 300ms forwards;
+}
+
+.project-card > a div.remove-pseudo::after {
+  animation: rev-right-clip 800ms normal forwards;
+}
+
+.project-card > a div.add-pseudo::before {
+  animation: left-top-clip 500ms normal;
+}
+
+.project-card > a div.add-pseudo::after {
+  animation: right-clip 800ms normal;
 }
 
 .project-card > a div::after {
@@ -701,12 +719,9 @@ img.contact {
   border-top-right-radius: 2rem;
 }
 
-.project-card > a:hover div::after {
-  content: '';
-  animation: right-clip 800ms ease;
-}
-
 /* Intended to both have the same duration to keep right border content hidden */
+/* Slightly scuffed duplication of animation for reversal, animaiton direction not giving desired function */
+/* FIXME: animations don't match when stopped midway */
 @keyframes left-top-clip {
   0% {
     clip-path: inset(100% 398px 0 0);
@@ -716,6 +731,18 @@ img.contact {
   }
   100% {
     clip-path: inset(0);
+  }
+}
+
+@keyframes rev-left-top-clip {
+  0% {
+    clip-path: inset(0);
+  }
+  60% {
+    clip-path: inset(0 398px 0 0);
+  }
+  100% {
+    clip-path: inset(100% 398px 0 0);
   }
 }
 
@@ -731,5 +758,20 @@ img.contact {
   }
   100% {
     clip-path: inset(0);
+  }
+}
+
+@keyframes rev-right-clip {
+  0% {
+    clip-path: inset(0);
+  }
+  37% {
+    clip-path: inset(0 0 238px 0);
+  }
+  38% {
+    clip-path: inset(0 50%);
+  }
+  100% {
+    clip-path: inset(0 50%);
   }
 }
