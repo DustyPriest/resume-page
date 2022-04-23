@@ -223,6 +223,7 @@ h1::before,
   border-bottom: var(--txt-underline);
   transform: scaleX(70%);
   transform-origin: left;
+  pointer-events: none;
 }
 
 .contact-text li::before,
@@ -534,12 +535,14 @@ h3 {
 
 .timeline-card-title {
   font-size: 1.5rem;
+  text-align: center;
 }
 
 .timeline-card-subtitle,
 .timeline-card-detail {
   font-size: 1.25rem;
   font-style: italic;
+  text-align: center;
 }
 
 .timeline-card::before {
@@ -640,7 +643,11 @@ h3 {
 }
 
 .contact-text i {
-  padding: var(--gap-xsml);
+  font-size: 1.5rem;
+  padding-right: var(--gap-sml);
+}
+.contact-text a {
+  display: flex;
 }
 
 /* ------ Buttons & Icons ------ */
