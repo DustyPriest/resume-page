@@ -3,9 +3,9 @@
 
 /* ------ LOAD FUNCTIONS ------ */
 
-setTimeout(() => {
-  document.body.classList.remove('preload');
-}, 500);
+// setTimeout(() => {
+//   document.body.classList.remove('preload');
+// }, 500);
 
 /* ------ GLOBALS ------ */
 
