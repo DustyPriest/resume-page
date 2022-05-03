@@ -43,13 +43,14 @@ const assessNavShadow = () => {
   }
 };
 
+// ANTIQUATED: FOR OLD BORDER ANIMATIONS
 // project card border animation
-projCards.forEach((div) => {
-  div.addEventListener('mouseenter', () => {
-    div.classList.add('add-pseudo');
-  });
-  div.addEventListener('mouseleave', () => {
-    div.classList.remove('add-pseudo');
-    div.classList.add('remove-pseudo');
-  });
-});
+// projCards.forEach((div) => {
+//   div.addEventListener('mouseenter', () => {
+//     div.classList.add('add-pseudo');
+//   });
+//   div.addEventListener('mouseleave', () => {
+//     div.classList.remove('add-pseudo');
+//     div.classList.add('remove-pseudo');
+//   });
+// });

@@ -243,7 +243,7 @@ h1::before,
   bottom: -0.3em;
   height: 0.2em;
   width: 100%;
-  background-color: var(--clr-accent);
+  background-color: currentColor;
   /* border-bottom: var(--txt-underline); */
   transform: scaleX(70%);
   transform-origin: left;
@@ -756,40 +756,38 @@ img.contact {
 }
 
 .project-card > a div::before {
-  content: none;
+  content: '';
   position: absolute;
   inset: 0;
   border: 2px solid var(--clr-accent);
   border-bottom: none;
   border-right: none;
   border-top-right-radius: 2rem;
+  /* clip-path set to cover 400x240 img smoothly  */
+  clip-path: polygon(
+    -105.882px 63.529px,
+    -105.882px 63.529px,
+    105.882px 416.471px,
+    105.882px 416.471px,
+    -105.882px 63.529px
+  );
+  /* transition on main element and pseudo element for one way transition delays */
+  transition: clip-path 500ms linear 300ms;
 }
 
-.project-card > a div.add-pseudo::before,
-.project-card > a div.add-pseudo::after,
-.project-card > a div.remove-pseudo::before,
-.project-card > a div.remove-pseudo::after {
-  content: '';
-}
-
-.project-card > a div.remove-pseudo::before {
-  animation: rev-left-top-clip 500ms normal 300ms forwards;
-}
-
-.project-card > a div.remove-pseudo::after {
-  animation: rev-right-clip 800ms normal forwards;
-}
-
-.project-card > a div.add-pseudo::before {
-  animation: left-top-clip 500ms normal;
-}
-
-.project-card > a div.add-pseudo::after {
-  animation: right-clip 800ms normal;
+.project-card > a div:hover::before {
+  transition: clip-path 500ms linear;
+  clip-path: polygon(
+    -105.882px 63.529px,
+    294.118px -176.471px,
+    505.882px 176.471px,
+    105.882px 416.471px,
+    -105.882px 63.529px
+  );
 }
 
 .project-card > a div::after {
-  content: none;
+  content: '';
   position: absolute;
   inset: 0;
   border: 2px solid var(--clr-accent);
@@ -797,12 +795,42 @@ img.contact {
   border-left: none;
   border-top: none;
   border-top-right-radius: 2rem;
+  clip-path: polygon(90% 0%, 102% 0%, 102% 0%, 90% 0%, 90% 0%);
+  transition: clip-path 300ms linear;
 }
 
+.project-card > a div:hover::after {
+  transition: clip-path 300ms linear 500ms;
+  clip-path: polygon(90% 0%, 102% 0%, 102% 100%, 90% 100%, 90% 0%);
+}
+
+/* .project-card > a div.add-pseudo::before,
+  .project-card > a div.add-pseudo::after,
+  .project-card > a div.remove-pseudo::before,
+  .project-card > a div.remove-pseudo::after {
+    content: '';
+  }
+  
+  .project-card > a div.remove-pseudo::before {
+    animation: rev-left-top-clip 500ms normal 300ms forwards;
+  }
+  
+  .project-card > a div.remove-pseudo::after {
+    animation: rev-right-clip 800ms normal forwards;
+  }
+  
+  .project-card > a div.add-pseudo::before {
+    animation: left-top-clip 500ms normal;
+  }
+  
+  .project-card > a div.add-pseudo::after {
+    animation: right-clip 800ms normal;
+  } */
+
+/* OLD ANIMATIONS: REPLACED WITH CLIP PATH POLYGON TRANSITIONS */
 /* Intended to both have the same duration to keep right border content hidden */
 /* Slightly scuffed duplication of animation for reversal, animaiton direction not giving desired function */
-/* FIXME: animations don't match when stopped midway */
-@keyframes left-top-clip {
+/* @keyframes left-top-clip {
   0% {
     clip-path: inset(100% 398px 0 0);
   }
@@ -854,4 +882,4 @@ img.contact {
   100% {
     clip-path: inset(0 50%);
   }
-}
+} */
