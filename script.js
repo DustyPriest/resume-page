@@ -3,9 +3,9 @@
 
 /* ------ LOAD FUNCTIONS ------ */
 
-// setTimeout(() => {
-//   document.body.classList.remove('preload');
-// }, 500);
+setTimeout(() => {
+  sectionArrow.classList.remove('hide-arrow');
+}, 3500);
 
 /* ------ GLOBALS ------ */
 
@@ -14,6 +14,7 @@ let scrolling = false;
 /* ------ DOCUMENT ELEMENTS ------ */
 
 const navBar = document.querySelector('nav');
+const sectionArrow = document.querySelector('.next-section-arrow');
 const projCards = document.querySelectorAll('.project-card > a div');
 
 /* ------ EVENT LISTENERS ------ */
@@ -28,6 +29,7 @@ setInterval(() => {
     scrolling = false;
 
     assessNavShadow();
+    assessSectionArrow();
   }
 }, 300);
 
@@ -40,6 +42,17 @@ const assessNavShadow = () => {
     navBar.classList.contains('scroll-shadow')
   ) {
     navBar.classList.remove('scroll-shadow');
+  }
+};
+
+const assessSectionArrow = () => {
+  if (window.scrollY > 0 && !sectionArrow.classList.contains('hide-arrow')) {
+    sectionArrow.classList.add('hide-arrow');
+  } else if (
+    window.scrollY === 0 &&
+    sectionArrow.classList.contains('hide-arrow')
+  ) {
+    sectionArrow.classList.remove('hide-arrow');
   }
 };
 

@@ -243,7 +243,7 @@ h1::before,
   content: '';
   position: absolute;
   /* inset: -0.3em 0; */
-  bottom: -0.3em;
+  bottom: -0.4em;
   height: 0.2em;
   width: 100%;
   background-color: currentColor;
@@ -376,6 +376,7 @@ h1 {
 @keyframes fade-in {
   to {
     opacity: 1;
+    pointer-events: all;
   }
 }
 
@@ -398,6 +399,28 @@ h1 {
   position: relative;
   font-style: italic;
   font-weight: var(--ftw-600);
+}
+
+.next-section-arrow {
+  position: fixed;
+  z-index: 10;
+  background: none;
+  bottom: 6rem;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  border-right: 4px solid var(--clr-accent);
+  border-bottom: 4px solid var(--clr-accent);
+  border-top: none;
+  border-left: none;
+  transform-origin: center;
+  transform: rotate(45deg);
+  transition: opacity 0.25s ease-in;
+}
+
+.hide-arrow {
+  opacity: 0;
+  pointer-events: none;
 }
 
 /* ------ Work Cards ------ */
