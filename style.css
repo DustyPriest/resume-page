@@ -387,6 +387,7 @@ h1 {
 
   color: var(--clr-text-secondary);
   font-size: 1.25rem;
+  line-height: 1.5;
 
   width: var(--txtbox-width);
 }
@@ -505,6 +506,11 @@ h3 {
 
 .work-list li {
   padding-bottom: var(--gap-sml);
+}
+
+.work-list li,
+.solo-card > p {
+  line-height: 1.3;
 }
 
 .work-list li:last-child {
